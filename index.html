@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Irfan Fathurrohman</title>
+    
+    <!-- Google Fonts: Quantico -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Configuration for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#050C9C',    // Deep Dark Blue
+                        royal: '#3572EF',   // Primary Blue
+                        sky: '#3ABEF9',     // Secondary Blue
+                        pale: '#A7E6FF',    // Light Accent
+                        whiteish: '#F1F6F5' // Text/Background
+                    },
+                    fontFamily: {
+                        quantico: ['Quantico', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities */
+        body {
+            font-family: 'Quantico', sans-serif;
+            background-color: #050C9C; /* Base Background */
+            color: #F1F6F5;
+            overflow-x: hidden;
+        }
+
+        /* Typing Cursor Animation */
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #3ABEF9;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Glassmorphism for Nav and Cards */
+        .glass {
+            background: rgba(5, 12, 156, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(58, 190, 249, 0.2);
+        }
+
+        .skill-card {
+            transition: all 0.3s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #3ABEF9;
+            box-shadow: 0 0 15px rgba(58, 190, 249, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass top-0 left-0 border-b border-royal/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 cursor-pointer">
+                    <span class="text-2xl font-bold text-pale">IF.</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-sky px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="#about" class="hover:text-sky px-3 py-2 rounded-md text-sm font-medium transition-colors">About Me</a>
+                        <a href="#skill" class="hover:text-sky px-3 py-2 rounded-md text-sm font-medium transition-colors">Skill</a>
+                        <a href="#project" class="hover:text-sky px-3 py-2 rounded-md text-sm font-medium transition-colors">Project</a>
+                        <a href="#contact" class="hover:text-sky px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-pale hover:text-white focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-navy border-b border-royal/30" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" onclick="toggleMenu()" class="text-whiteish hover:text-sky block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" onclick="toggleMenu()" class="text-whiteish hover:text-sky block px-3 py-2 rounded-md text-base font-medium">About Me</a>
+                <a href="#skill" onclick="toggleMenu()" class="text-whiteish hover:text-sky block px-3 py-2 rounded-md text-base font-medium">Skill</a>
+                <a href="#project" onclick="toggleMenu()" class="text-whiteish hover:text-sky block px-3 py-2 rounded-md text-base font-medium">Project</a>
+                <a href="#contact" onclick="toggleMenu()" class="text-whiteish hover:text-sky block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME Section id="skill" class="py-20 bg-black/20" -->
+    <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-4 relative overflow-hidden bg-black/20">
+        <!-- Background Decor -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-royal rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sky rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="z-10 animate-fade-in-up">
+            <h2 class="text-pale text-xl md:text-2xl mb-4 font-bold tracking-widest">HELLO WORLD!</h2>
+            <h1 class="text-4xl md:text-7xl font-bold text-whiteish mb-6">
+                Welcome to my<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky to-pale">Portofolio</span>
+            </h1>
+            <a href="#about" class="mt-8 inline-block px-8 py-3 border border-sky text-sky hover:bg-sky hover:text-navy transition-all duration-300 rounded font-bold">
+                EXPLORE
+            </a>
+        </div>
+    </section>
+
+    <!-- ABOUT ME Section -->
+    <section id="about" class="py-20 px-4 md:px-0">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                
+                <!-- Left: Text -->
+                <div class="w-full md:w-1/2 order-2 md:order-1">
+                    <h2 class="text-3xl font-bold text-sky mb-6 border-l-4 border-royal pl-4">About Me</h2>
+                    <p class="text-lg mb-4 text-gray-300 leading-relaxed">
+                        Halo! Nama saya <strong class="text-whiteish">Irfan Fathurrohman</strong>.
+                    </p>
+                    <p class="text-lg mb-4 text-gray-300 leading-relaxed">
+                        Saya merupakanz Mahasiswa semester 3 Teknik Informatika di Universitas Buana Perjuangan Karawang. Saya adalah pribadi yang gemar belajar hal baru dan mengeksplorasi dunia teknologi.
+                    </p>
+                    <p class="text-lg text-pale font-bold mt-6">
+                        I'm a Enthusiast :<br>
+                        <span class="text-2xl text-sky" id="typing-text"></span><span class="cursor">&nbsp;</span>
+                    </p>
+                </div>
+
+                <!-- Right: Photo -->
+                <div class="w-full md:w-1/2 flex justify-center order-1 md:order-2">
+                    <div class="relative group">
+                        <!-- Glow effect behind image -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-royal to-sky rounded-[16px] blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                        
+                        <!-- Image Container -->
+                        <!-- REPLACE src below with your actual image path -->
+                        <img 
+                            src="profil.jpeg" 
+                            alt="Foto Irfan Fathurrohman" 
+                            class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-[16px] border-2 border-royal shadow-2xl"
+                        >
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILL Section -->
+    <section id="skill" class="py-20 bg-black/20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-sky mb-12 text-center">My Skills</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Skill Item Template -->
+                <div class="skill-card p-6 border border-royal/40 rounded-lg text-center bg-transparent backdrop-blur-sm">
+                    <i data-lucide="code-2" class="w-10 h-10 text-pale mx-auto mb-3"></i>
+                    <h3 class="text-xl font-bold text-whiteish">HTML</h3>
+                </div>
+
+                <div class="skill-card p-6 border border-royal/40 rounded-lg text-center bg-transparent backdrop-blur-sm">
+                    <i data-lucide="paint-bucket" class="w-10 h-10 text-pale mx-auto mb-3"></i>
+                    <h3 class="text-xl font-bold text-whiteish">CSS</h3>
+                </div>
+
+                <div class="skill-card p-6 border border-royal/40 rounded-lg text-center bg-transparent backdrop-blur-sm">
+                    <i data-lucide="terminal" class="w-10 h-10 text-pale mx-auto mb-3"></i>
+                    <h3 class="text-xl font-bold text-whiteish">Python</h3>
+                </div>
+
+                <div class="skill-card p-6 border border-royal/40 rounded-lg text-center bg-transparent backdrop-blur-sm">
+                    <i data-lucide="server" class="w-10 h-10 text-pale mx-auto mb-3"></i>
+                    <h3 class="text-xl font-bold text-whiteish">PHP</h3>
+                </div>
+
+                <div class="skill-card p-6 border border-royal/40 rounded-lg text-center bg-transparent backdrop-blur-sm">
+                    <i data-lucide="braces" class="w-10 h-10 text-pale mx-auto mb-3"></i>
+                    <h3 class="text-xl font-bold text-whiteish">JavaScript</h3>
+                </div>
+
+                <div class="skill-card p-6 border border-royal/40 rounded-lg text-center bg-transparent backdrop-blur-sm">
+                    <i data-lucide="database" class="w-10 h-10 text-pale mx-auto mb-3"></i>
+                    <h3 class="text-xl font-bold text-whiteish">MySQL</h3>
+                </div>
+
+                <div class="skill-card p-6 border border-royal/40 rounded-lg text-center bg-transparent backdrop-blur-sm lg:col-start-2">
+                    <i data-lucide="pen-tool" class="w-10 h-10 text-pale mx-auto mb-3"></i>
+                    <h3 class="text-xl font-bold text-whiteish">Canva</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECT Section -->
+    <section id="project" class="py-20 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-sky mb-12 text-center">Featured Project</h2>
+
+            <div class="glass rounded-xl overflow-hidden border border-royal/30 hover:border-sky/60 transition-colors duration-300">
+                <div class="md:flex">
+                    <!-- Project Illustration (Code snippet look) -->
+                    <div class="md:w-1/3 bg-black/40 p-8 flex items-center justify-center border-r border-royal/20">
+                        <i data-lucide="wallet" class="w-24 h-24 text-royal opacity-80"></i>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="p-8 md:w-2/3">
+                        <div class="uppercase tracking-wide text-sm text-sky font-semibold">Web Application</div>
+                        <h3 class="block mt-1 text-2xl leading-tight font-bold text-whiteish">Manajemen Keuangan Mahasiswa</h3>
+                        <p class="mt-4 text-gray-300">
+                            Menggunakan tech PHP Native, CSS dan tambahan sedikit JavaScript, project ini dibuat untuk memenuhi tugas akhir matakuliah Pemrograman Web, Pemrograman Berorientasi Objek, Basis Data dan Analisis dan Desain Berorientasi Objek di semester 3 Program Studi Teknik Informatika.
+                        </p>
+                        
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="bg-royal/20 text-pale px-3 py-1 rounded-full text-xs border border-royal/50">PHP Native</span>
+                            <span class="bg-royal/20 text-pale px-3 py-1 rounded-full text-xs border border-royal/50">CSS</span>
+                            <span class="bg-royal/20 text-pale px-3 py-1 rounded-full text-xs border border-royal/50">MySQL</span>
+                        </div>
+
+                        <div class="mt-8">
+                            <a href="https://github.com/IRFAN-XCode/final-project-semester-3" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-navy bg-pale hover:bg-sky transition-colors">
+                                <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT Section -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-navy to-black/40 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-sky mb-8">Get In Touch</h2>
+            <p class="text-gray-300 mb-12 max-w-lg mx-auto">
+                Tertarik untuk berkolaborasi atau sekedar menyapa? Silahkan hubungi saya melalui platform di bawah ini.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Email -->
+                <a href="mailto:irfan.fathurrohman2006@gmail.com" class="group p-6 glass rounded-lg hover:bg-royal/20 transition-all">
+                    <i data-lucide="mail" class="w-8 h-8 text-sky mx-auto mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-lg font-bold text-whiteish">Email</h3>
+                    <p class="text-sm text-gray-400 break-all">irfan.fathurrohman2006@gmail.com</p>
+                </a>
+
+                <!-- Github -->
+                <a href="https://github.com/IRFAN-Xcode" target="_blank" class="group p-6 glass rounded-lg hover:bg-royal/20 transition-all">
+                    <i data-lucide="github" class="w-8 h-8 text-sky mx-auto mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-lg font-bold text-whiteish">GitHub</h3>
+                    <p class="text-sm text-gray-400">IRFAN-Xcode</p>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/my.irfannn23" target="_blank" class="group p-6 glass rounded-lg hover:bg-royal/20 transition-all">
+                    <i data-lucide="instagram" class="w-8 h-8 text-sky mx-auto mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-lg font-bold text-whiteish">Instagram</h3>
+                    <p class="text-sm text-gray-400">@my.irfannn23</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 py-6 border-t border-royal/20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-400 text-sm">
+                &copy; 2024 Irfan Fathurrohman. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Typing Animation Logic
+        const textElement = document.getElementById('typing-text');
+        const words = ["Front-End", "UI/UX Designer", "Web Developer", "Graphic Designer"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 100;
+
+        function type() {
+            const currentWord = words[wordIndex];
+            
+            if (isDeleting) {
+                textElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+                typeSpeed = 50; // Deleting speed
+            } else {
+                textElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 150; // Typing speed
+            }
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                typeSpeed = 2000; // Pause at end of word
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 500; // Pause before new word
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        // Start animation on load
+        document.addEventListener('DOMContentLoaded', type);
+    </script>
+</body>
+</html>
